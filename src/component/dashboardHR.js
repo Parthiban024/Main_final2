@@ -3,9 +3,38 @@ import axios from 'axios';
 import Navbar from "./navbarPage"
 import Swal from "sweetalert2";
 import { Route, Routes, Navigate, Link, useNavigate } from "react-router-dom";
-import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-function Table() {
+import { CSVLink } from 'react-csv';
+function Table(data) {
   const [review, setReviews] = useState([]);
+  const [selectedMonth, setSelectedMonth] = useState('');
+
+
+  const filteredData = selectedMonth ? data.filter(item => item.month === selectedMonth) : data;
+
+  const headers = [
+    { label: 'Employee Namw', key: 'employeeNameThree' },
+    { label: 'Employee ID', key: 'employeeIdThree' },
+    { label: 'Email', key: 'emailIdThree' },
+    { label: 'Priority', key: 'priorityThree' },
+    { label: 'Unit No', key: 'unitNoThree' },
+    { label: 'Floor No', key: 'floorNoThree' },
+    { label: 'System No', key: 'systemNoThree' },
+    { label: 'Issue', key: 'systemTypeThree' },
+    { label: 'Description', key: 'descriptionThree' },
+
+  ];
+
+  const csvData = review.map(r => ({
+    employeeNameThree: r.employeeNameThree,
+    employeeIdThree: r.employeeIdThree,
+    emailIdThree: r.emailIdThree,
+    priorityThree: r.priorityThree,
+    unitNoThree: r.unitNoThree,
+     floorNoThree: r.floorNoThree,
+    systemNoThree: r.systemNoThree,
+    systemTypeThree: r.systemTypeThree,
+    descriptionThree: r.descriptionThree,
+  }));
 
   const navigate = useNavigate();
 
@@ -120,26 +149,20 @@ function Table() {
       <div className='sec_two d-flex justify-content-center align-items-center'>
         <h1>HR Panel</h1>
       </div>
-      <div>
-        <ReactHTMLTableToExcel
-          id="test-table-xls-button"
-          className="btn btn-success btn-sm table_main"
-          table="table-to-xls"
-          filename="reviews"
-          sheet="reviews"
-          buttonText="Export to Excel"
-          excludeColumns="[5]"
-        />
-      </div>
+      <CSVLink className='exportbtn btn btn-success btn-sm  table_main' data={csvData} headers={headers} filename={`data_${selectedMonth || 'all_months'}.csv`}>
+        Export to CSV
+      </CSVLink>
       <div className='hm_sec_3'>
         <div className='container  d-flex justify-content-center '>
           <table id="table-to-xls" className="table table-hover tablePage">
             <thead className="thead_bg">
               <tr>
-                <th>Employee Name</th>
-                <th>Employee ID</th>
+              <th >Employee Name</th>
+                <th >Employee ID</th>
                 <th>Email</th>
                 <th>Priority</th>
+                <th>Unit No</th>
+                <th>Floor No</th>
                 <th>System No</th>
                 <th>Issue</th>
                 <th>Description</th>
@@ -157,6 +180,8 @@ function Table() {
                   <td>{r.employeeIdThree}</td>
                   <td>{r.emailIdThree}</td>
                   <td>{r.priorityThree}</td>
+                  <td>{r.unitNoThree}</td>
+                  <td>{r.floorNoThree}</td>
                   <td>{r.systemNoThree}</td>
                   <td>{r.systemTypeThree}</td>
                   <td>{r.descriptionThree}</td>

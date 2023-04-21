@@ -256,7 +256,7 @@ function HrForm() {
             </div>
             <div className='mt-5'>
               <div class="form-floating">
-                <textarea value={descriptionThree} onChange={(event) => setDescriptionThree(event.target.value)} class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: 100 }}></textarea>
+                <textarea value={descriptionThree} onChann ge={(event) => setDescriptionThree(event.target.value)} class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: 100 }}></textarea>
                 <label for="floatingTextarea2">Comments</label>
               </div>
             </div>
@@ -264,7 +264,7 @@ function HrForm() {
               <button type="submit" className='btn btn-primary btn_hm'>Submit a Ticket</button>
             </div>
           </form>
-        </div>
+        </div> 
       </div>
     </div>
   );

@@ -17,6 +17,8 @@ function Table(data) {
     { label: 'Employee ID', key: 'employeeIdTwo' },
     { label: 'Email', key: 'emailIdTwo' },
     { label: 'Priority', key: 'priorityTwo' },
+    { label: 'Unit No', key: 'unitNoTwo' },
+    { label: 'Floor No', key: 'floorNoTwo' },
     { label: 'System No', key: 'systemNoTwo' },
     { label: 'Issue', key: 'systemTypeTwo' },
     { label: 'Description', key: 'descriptionTwo' },
@@ -28,6 +30,8 @@ function Table(data) {
     employeeIdTwo: r.employeeIdTwo,
     emailIdTwo: r.emailIdTwo,
     priorityTwo: r.priorityTwo,
+    unitNoTwo: r.unitNotwo,
+    floorNoTwo: r.floorNoTwo,
     systemNoTwo: r.systemNoTwo,
     systemTypeTwo: r.systemTypeTwo,
     descriptionTwo: r.descriptionTwo,
@@ -166,15 +170,20 @@ function Table(data) {
           excludeColumns="[5]"
         />
       </div> */}
+      <CSVLink className='exportbtn btn btn-success btn-sm  table_main' data={csvData} headers={headers} filename={`data_${selectedMonth || 'all_months'}.csv`}>
+        Export to CSV
+      </CSVLink>
       <div className='hm_sec_3'>
         <div className='container  d-flex justify-content-center '>
           <table id="table-to-xls" className="table table-hover tablePage">
             <thead className="thead_bg">
               <tr>
-                <th>Employee Name</th>
+              <th>Employee Name</th>
                 <th>Employee ID</th>
                 <th>Email</th>
                 <th>Priority</th>
+                <th>Unit No</th>
+                <th>Floor No</th>
                 <th>System No</th>
                 <th>Issue</th>
                 <th>Description</th>
@@ -192,6 +201,8 @@ function Table(data) {
                   <td>{r.employeeIdTwo}</td>
                   <td>{r.emailIdTwo}</td>
                   <td>{r.priorityTwo}</td>
+                  <td>{r.unitNoTwo}</td>
+                  <td>{r.floorNoTwo}</td>
                   <td>{r.systemNoTwo}</td>
                   <td>{r.systemTypeTwo}</td>
                   <td>{r.descriptionTwo}</td>
@@ -235,12 +246,10 @@ function Table(data) {
               ))}
             </tbody>
           </table>
-          <CSVLink data={csvData} headers={headers} filename={`data_${selectedMonth || 'all_months'}.csv`}>
-        Export to CSV
-      </CSVLink>
+
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
 

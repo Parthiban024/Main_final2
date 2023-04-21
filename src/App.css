@@ -11,7 +11,12 @@
     width: 100%;
     opacity: 1;
 }
-
+.viewTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 .email_login {
     opacity: 999 !important;
 }
@@ -122,6 +127,7 @@
 }
 
 .tablePage {
+    width: 100% !important;
     opacity: 999;
     margin-top: -80px;
     padding-left: 100px;
@@ -325,4 +331,8 @@
 
 .checkbox_main {
     font-size: 100px;
+}
+
+.exportbtn{
+    
 }
