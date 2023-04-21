@@ -40,11 +40,11 @@ function CollapsibleExample() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Nav.Link href="/" className='nav_font home_one'>Home</Nav.Link>
-            <NavDropdown title="Admin" id="collasible-nav-dropdown" className='nav_font dropmain'>
-              <NavDropdown.Item href="/login" className='drophover'>Admin Dashboard</NavDropdown.Item>
-              <NavDropdown.Item href="/loginTC" className='drophover'>TimeChamp Dashboard</NavDropdown.Item>
-              <NavDropdown.Item href="/loginHR" className='drophover'>HR Dashboard</NavDropdown.Item>
+            <Nav.Link href="/" className='nav_font home_one drophover'><strong>Home</strong></Nav.Link>
+            <NavDropdown title="Dashboard" id="collasible-nav-dropdown" className='nav_font dropmain drophover'>
+              <NavDropdown.Item href="/login" className='drophover'><strong>IT Admin Login</strong></NavDropdown.Item>
+              <NavDropdown.Item href="/loginTC" className='drophover'><strong>Facility Admin Login</strong></NavDropdown.Item>
+              <NavDropdown.Item href="/loginHR" className='drophover'><strong>HR Admin Login</strong></NavDropdown.Item>
             </NavDropdown>
 
           </Nav>

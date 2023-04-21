@@ -41,10 +41,10 @@ function CollapsibleExample() {
           <Nav className="me-auto"></Nav>
           <Nav>
             <Nav.Link href="/" className='nav_font home_one'>Home</Nav.Link>
-            <NavDropdown title="Submit a Ticket's" id="collasible-nav-dropdown" className='nav_font dropmain'>
-              <NavDropdown.Item href="/form" className='drophover'>System Issue</NavDropdown.Item>
-              <NavDropdown.Item href="/formTimeChamp" className='drophover'>TimeChamp Issue</NavDropdown.Item>
-              <NavDropdown.Item href="/formHr" className='drophover'>HR Issue</NavDropdown.Item>
+            <NavDropdown title="Ticket Form's" id="collasible-nav-dropdown" className='nav_font dropmain'>
+              <NavDropdown.Item href="/form" className='drophover'><strong>IT Team Ticket</strong></NavDropdown.Item>
+              <NavDropdown.Item href="/formTimeChamp" className='drophover'><strong>Facility Team Ticket</strong></NavDropdown.Item>
+              <NavDropdown.Item href="/formHr" className='drophover'><strong>HR Team Ticket</strong></NavDropdown.Item>
             </NavDropdown>
 
           </Nav>

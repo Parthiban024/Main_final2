@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { TextareaAutosize } from "@mui/material/TextareaAutosize";
 import axios from 'axios';
 import Navbar from "./navbarUser"
+import Footer from "./footer"
 import Swal from "sweetalert2";
 function EmployeeForm() {
   const [id, idchange] = useState("");
@@ -59,11 +60,11 @@ function EmployeeForm() {
   return (
     <div>
       <Navbar />
-      <div className='sec_two d-flex justify-content-center align-items-center'>
-        <h1>Create a Admin's Ticket</h1>
+      <div className='sec_two d-flex justify-content-center align-items-center color'>
+      <h3><strong>Create a IT Team Ticket</strong></h3>
       </div>
-      <div className='hm_sec_3'>
-        <div className='container  d-flex justify-content-center '>
+    
+        <div className='container  d-flex justify-content-center formHeight'>
           <div className="form-group">
             <label className="id_display">ID</label>
             <input value={id} disabled="disabled" className="form-control id_display"></input>
@@ -229,8 +230,9 @@ function EmployeeForm() {
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value="High">High Priority</MenuItem>
-                    <MenuItem value="Low">Low Priority</MenuItem>
+                    <MenuItem value="High-Priority">High</MenuItem>
+                    <MenuItem value="High-Priority">Medium</MenuItem>
+                    <MenuItem value="Low-Priority">Low</MenuItem>
                   </Select>
                 </FormControl>
               </div>
@@ -252,16 +254,17 @@ function EmployeeForm() {
             <div className='mt-5'>
               <div class="form-floating">
                 <textarea value={description} onChange={(event) => setDescription(event.target.value)} class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: 100 }}></textarea>
-                <label for="floatingTextarea2">Comments</label>
+                <label for="floatingTextarea2">Issue Details</label>
               </div>
             </div>
             <div className='d-flex justify-content-center mt-4'>
-              <button type="submit" className='btn btn-primary btn_hm'>Submit a Ticket</button>
+              <button type="submit" className='btn btn-primary btn_hm'><strong>Submit a Ticket</strong></button>
             </div>
           </form>
         </div>
+        <Footer/>
       </div>
-    </div>
+ 
   );
 }
 

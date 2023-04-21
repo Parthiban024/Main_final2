@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { TextareaAutosize } from "@mui/material/TextareaAutosize";
 import axios from 'axios';
 import Navbar from "./navbarUser"
+import Footer from "./footer"
 import Swal from "sweetalert2";
 function HrForm() {
   const [id, idchange] = useState("");
@@ -61,11 +62,11 @@ function HrForm() {
   return (
     <div>
       <Navbar />
-      <div className='sec_two d-flex justify-content-center align-items-center'>
-        <h1>Create a HR Team Ticket</h1>
+      <div className='sec_two d-flex justify-content-center align-items-center color'>
+      <h2><strong>Create a HR Team Ticket</strong></h2>
       </div>
-      <div className='hm_sec_3'>
-        <div className='container  d-flex justify-content-center '>
+ 
+        <div className='container  d-flex justify-content-center formHeight'>
           <div className="form-group">
             <label className="id_display">ID</label>
             <input value={id} disabled="disabled" className="form-control id_display"></input>
@@ -75,46 +76,30 @@ function HrForm() {
               {/* <TextField label="Employee Name" value={employeeName} onChange={(event) => setEmployeeName(event.target.value)} /> */}
 
               <div>
-                <TextField
-                  sx={{ width: 200 }}
+              <TextField
+                  sx={{ width: 320 }}
                   label="Employee Name"
                   id="outlined-size-small"
                   // defaultValue="Small"
                   size="small"
                   className="email_login"
                   type="text"
-                  value={employeeNameThree}
-                  onChange={(event) => setEmployeeNameThree(event.target.value)}
-
+                  value={systemNoThree}
+                  onChange={(event) => setSystemNoThree(event.target.value)}
                   required
                 />
               </div>
               <div>
-                <TextField
-                  sx={{ width: 200 }}
+              <TextField
+                  sx={{ width: 320 }}
                   label="Employee ID"
                   id="outlined-size-small"
                   // defaultValue="Small"
                   size="small"
                   className="email_login"
-                  type="number"
-                  value={employeeIdThree}
-                  onChange={(event) => setEmployeeIdThree(event.target.value)}
-
-                  required
-                />
-              </div>
-              <div>
-                <TextField
-                  sx={{ width: 200 }}
-                  label="Email ID"
-                  id="outlined-size-small"
-                  // defaultValue="Small"
-                  size="small"
-                  className="email_login"
-                  type="email"
-                  value={emailIdThree} onChange={(event) => setEmailIdThre(event.target.value)}
-
+                  type="text"
+                  value={systemNoThree}
+                  onChange={(event) => setSystemNoThree(event.target.value)}
                   required
                 />
               </div>
@@ -123,7 +108,7 @@ function HrForm() {
               <div>
                 <TextField
                   sx={{ width: 320 }}
-                  label="System No"
+                  label="Email ID"
                   id="outlined-size-small"
                   // defaultValue="Small"
                   size="small"
@@ -151,42 +136,12 @@ function HrForm() {
                     </MenuItem>
                     <MenuItem value="PF & ESI">PF & ESI</MenuItem>
                     <MenuItem value="Salary Issue">Salary Issue</MenuItem>
-                    <MenuItem value="Facilities">Facilities</MenuItem>
+                    <MenuItem value="Facilities">Pay slip</MenuItem>
                     <MenuItem value="Salary Issue">Offer Letter</MenuItem>
                     <MenuItem value="Salary Issue">ID-Card</MenuItem>
                     <MenuItem value="Others">Others</MenuItem>
                   </Select>
                 </FormControl>
-              </div>
-            </div>
-            <div className='d-flex flex-row gap-5 mt-5'>
-              <div>
-                <TextField
-                  sx={{ width: 320 }}
-                  label="Unit No"
-                  id="outlined-size-small"
-                  // defaultValue="Small"
-                  size="small"
-                  className="email_login"
-                  type="number"
-                  value={unitNoThree}
-                  onChange={(event) => setUnitNoThree(event.target.value)}
-                  required
-                />
-              </div>
-              <div>
-                <TextField
-                  sx={{ width: 328 }}
-                  label="Floor No"
-                  id="outlined-size-small"
-                  // defaultValue="Small"
-                  size="small"
-                  className="email_login"
-                  type="number"
-                  value={floorNoThree}
-                  onChange={(event) => setFloorNoThree(event.target.value)}
-                  required
-                />
               </div>
             </div>
             <div className='d-flex flex-row gap-5 mt-5'>
@@ -234,8 +189,9 @@ function HrForm() {
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value="High-Priority">High Priority</MenuItem>
-                    <MenuItem value="Low-Priority">Low Priority</MenuItem>
+                    <MenuItem value="High-Priority">High</MenuItem>
+                    <MenuItem value="High-Priority">Medium</MenuItem>
+                    <MenuItem value="Low-Priority">Low</MenuItem>
                   </Select>
                 </FormControl>
               </div>
@@ -256,17 +212,19 @@ function HrForm() {
             </div>
             <div className='mt-5'>
               <div class="form-floating">
-                <textarea value={descriptionThree} onChann ge={(event) => setDescriptionThree(event.target.value)} class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: 100 }}></textarea>
+                <textarea value={descriptionThree} onChange={(event) => setDescriptionThree(event.target.value)} class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: 100 }}></textarea>
                 <label for="floatingTextarea2">Comments</label>
               </div>
             </div>
-            <div className='d-flex justify-content-center mt-4'>
-              <button type="submit" className='btn btn-primary btn_hm'>Submit a Ticket</button>
+            <div className='d-flex justify-content-center mt-5'>
+              <button type="submit" className='btn btn-primary btn_hm'><strong>Submit a Ticket</strong></button>
             </div>
           </form>
-        </div> 
+        </div>
+        <Footer/>
       </div>
-    </div>
+     
+
   );
 }
 

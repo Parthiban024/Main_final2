@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { TextareaAutosize } from "@mui/material/TextareaAutosize";
 import axios from 'axios';
 import Navbar from "./navbarUser"
+import Footer from "./footer"
 import Swal from "sweetalert2";
 
 
@@ -48,7 +49,7 @@ function TimechampForm() {
 
 
 
-    axios.post('https://productionversionone.onrender.com/api/timechamp', formDataTwo)
+    axios.post('http://localhost:8001/api/timechamp', formDataTwo)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     Swal.fire(
@@ -63,11 +64,11 @@ function TimechampForm() {
   return (
     <div>
       <Navbar />
-      <div className='sec_two d-flex justify-content-center align-items-center'>
-        <h1>Create a facility Ticket</h1>
+      <div className='sec_two d-flex justify-content-center align-items-center color'>
+        <h2><strong>Create a Facility Team Ticket</strong></h2>
       </div>
-      <div className='hm_sec_3'>
-        <div className='container  d-flex justify-content-center '>
+   
+        <div className='container  d-flex justify-content-center formHeight'>
           <div className="form-group">
             <label className="id_display">ID</label>
             <input value={id} disabled="disabled" className="form-control id_display"></input>
@@ -75,57 +76,44 @@ function TimechampForm() {
           <form onSubmit={handleSubmit} className='formPage'>
             <div className='mt-5 d-flex flex-row gap-5'>
               {/* <TextField label="Employee Name" value={employeeName} onChange={(event) => setEmployeeName(event.target.value)} /> */}
-
+              
               <div>
                 <TextField
-                  sx={{ width: 200 }}
+                  sx={{ width: 320 }}
                   label="Employee Name"
                   id="outlined-size-small"
                   // defaultValue="Small"
                   size="small"
                   className="email_login"
                   type="text"
-                  value={employeeNameTwo}
-                  onChange={(event) => setEmployeeNameTwo(event.target.value)}
-
+                  value={systemNoTwo}
+                  onChange={(event) => setSystemNoTwo(event.target.value)}
                   required
                 />
               </div>
               <div>
                 <TextField
-                  sx={{ width: 200 }}
+                  sx={{ width: 328 }}
                   label="Employee ID"
                   id="outlined-size-small"
                   // defaultValue="Small"
                   size="small"
                   className="email_login"
-                  type="number"
-                  value={employeeIdTwo}
-                  onChange={(event) => setEmployeeIdTwo(event.target.value)}
-
+                  type="text"
+                  value={systemNoTwo}
+                  onChange={(event) => setSystemNoTwo(event.target.value)}
                   required
                 />
               </div>
-              <div>
-                <TextField
-                  sx={{ width: 200 }}
-                  label="Email ID"
-                  id="outlined-size-small"
-                  // defaultValue="Small"
-                  size="small"
-                  className="email_login"
-                  type="email"
-                  value={emailIdTwo} onChange={(event) => setEmailIdTwo(event.target.value)}
-
-                  required
-                />
-              </div>
+              
+             
+             
             </div>
             <div className='d-flex flex-row gap-5 mt-5'>
               <div>
                 <TextField
                   sx={{ width: 320 }}
-                  label="System No"
+                  label="Email ID"
                   id="outlined-size-small"
                   // defaultValue="Small"
                   size="small"
@@ -151,8 +139,11 @@ function TimechampForm() {
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value="TimeChamp Login Issue">TimeChamp Login Issue</MenuItem>
-                    <MenuItem value="Loading Issue">Loading Issue</MenuItem>
+                    <MenuItem value="TimeChamp Login Issue">Air Conditioner</MenuItem>
+                    <MenuItem value="Loading Issue">Drinking water</MenuItem>
+                    <MenuItem value="Loading Issue">Wash Room</MenuItem>
+                    <MenuItem value="TimeChamp Login Issue">Tube light</MenuItem>
+                    <MenuItem value="Loading Issue">Fan</MenuItem>
                     <MenuItem value="Others">Others</MenuItem>
                   </Select>
                 </FormControl>
@@ -233,8 +224,9 @@ function TimechampForm() {
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value="High-Priority">High Priority</MenuItem>
-                    <MenuItem value="Low-Priority">Low Priority</MenuItem>
+                    <MenuItem value="High-Priority">High</MenuItem>
+                    <MenuItem value="High-Priority">Medium</MenuItem>
+                    <MenuItem value="Low-Priority">Low</MenuItem>
                   </Select>
                 </FormControl>
               </div>
@@ -260,12 +252,14 @@ function TimechampForm() {
               </div>
             </div>
             <div className='d-flex justify-content-center mt-4'>
-              <button type="submit" className='btn btn-primary btn_hm'>Submit a Ticket</button>
+              <button type="submit" className='btn btn-primary btn_hm'><strong>Submit a Ticket</strong></button>
             </div>
           </form>
         </div>
+        <Footer/>
       </div>
-    </div>
+ 
+
   );
 }
 
