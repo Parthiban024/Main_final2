@@ -45,7 +45,7 @@ function HrForm() {
       descriptionThree: descriptionThree
     };
 
-    axios.post('http://localhost:8001/api/hrreview', formDataThree)
+    axios.post('https://productionfinal.onrender.com/api/hrreview', formDataThree)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     Swal.fire(

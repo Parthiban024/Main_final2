@@ -39,13 +39,13 @@ function Table(data) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8001/api/hrreview').then((response) => {
+    axios.get('https://productionfinal.onrender.com/api/hrreview').then((response) => {
       setReviews(response.data);
     });
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:8001/api/hrreview/${id}`).then(() => {
+    axios.delete(`https://productionfinal.onrender.com/api/hrreview/${id}`).then(() => {
       // remove the deleted review from the local state
       const updatedReviews = review.filter((r) => r._id !== id);
       setReviews(updatedReviews);
@@ -67,14 +67,14 @@ function Table(data) {
     });
   };
   const handleAccept = (ticket) => {
-    axios.post('http://localhost:8001/api/accepthr', ticket).then((res) => {
+    axios.post('https://productionfinal.onrender.com/api/accepthr', ticket).then((res) => {
       // send email to user using nodemailer
       const emailData = {
         to: ticket.emailIdThree,
         subject: 'Ticket Accepted',
         text: 'Your ticket has been accepted by the IT team.'
       };
-      axios.post('http://localhost:8001/api/send-emailhr', emailData).then((res) => {
+      axios.post('https://productionfinal.onrender.com/api/send-emailhr', emailData).then((res) => {
         // show success message
         Swal.fire({
           title: 'Success',
@@ -104,14 +104,14 @@ function Table(data) {
   };
 
   const handleResolve = (ticket) => {
-    axios.post('http://localhost:8001/api/resolvehr', ticket).then((res) => {
+    axios.post('https://productionfinal.onrender.com/api/resolvehr', ticket).then((res) => {
       // send email to user using nodemailer
       const emailData = {
         to: ticket.emailIdThree,
         subject: 'Ticket Resolved',
         text: 'Your ticket has been resolved by the IT team.'
       };
-      axios.post('http://localhost:8001/api/send-emailhr', emailData).then((res) => {
+      axios.post('https://productionfinal.onrender.com/api/send-emailhr', emailData).then((res) => {
         // show success message
         Swal.fire({
           title: 'Success',

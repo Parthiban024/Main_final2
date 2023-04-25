@@ -12,7 +12,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import {  IconButton, InputAdornment } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import Footer from "./footer"
-import Swal from "sweetalert2";
+import Swal from "sweetalert2"; 
 const LoginPage = ({ handleLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -105,7 +105,7 @@ const LoginPage = ({ handleLogin }) => {
             </div>
             <div className='d-flex justify-content-center mt-4'>
             <Link to="/">
-            Back to home
+            Back to home 
             </Link>
             </div>
           </form>
