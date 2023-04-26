@@ -44,7 +44,7 @@ function CollapsibleExample() {
             <NavDropdown title="Dashboard" id="collasible-nav-dropdown" className='nav_font dropmain drophover'>
               <NavDropdown.Item href="/login" className='drophover'><strong>IT Admin Login</strong></NavDropdown.Item>
               <NavDropdown.Item href="/loginTC" className='drophover'><strong>Facility Admin Login</strong></NavDropdown.Item>
-              <NavDropdown.Item href="/loginHR" className='drophover'><strong>HR Admin Login</strong></NavDropdown.Item>
+              <NavDropdown.Item href="/loginHR" className='drophover '><strong>HR Admin Login</strong></NavDropdown.Item>
             </NavDropdown>
 
           </Nav>

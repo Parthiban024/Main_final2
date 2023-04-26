@@ -62,7 +62,7 @@ function HrForm() {
   return (
     <div>
       <Navbar />
-      <div className='sec_two d-flex justify-content-center align-items-center color'>
+      <div className='sec_two d-flex justify-content-center align-items-center color font_header2'>
       <h2><strong>Create a HR Team Ticket</strong></h2>
       </div>
  

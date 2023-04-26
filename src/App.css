@@ -120,7 +120,7 @@
     margin-top: -80px;
     padding-left: 100px;
     padding-right: 100px;
-    height: 670px;
+    height: 770px;
     /* padding: 20px; */
 
     background-color: #fffef9;
@@ -359,4 +359,25 @@ color: #fc6140;
 }
 .formHeight{
     padding-bottom: 30px !important;
+}
+.font_header1{
+    font: 500 35px/1.10 'Zilla Slab', serif !important;
+}
+.font_header2{
+    font: 700 30px/1.22 'Zilla Slab', serif !important;
+}
+.Card-body {
+    font-size: 1.120rem;
+    font-family: "Poppins", "Arial Narrow", sans-serif;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: normal;
+}
+
+.home-header{
+    font-size: 1.125rem;
+    font-family: "IBMPlexSans", "Arial Narrow", sans-serif;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: normal;
 }
