@@ -86,8 +86,8 @@ function TimechampForm() {
                   size="small"
                   className="email_login"
                   type="text"
-                  value={systemNoTwo}
-                  onChange={(event) => setSystemNoTwo(event.target.value)}
+                  value={employeeNameTwo}
+                  onChange={(event) => setEmployeeNameTwo(event.target.value)}
                   required
                 />
               </div>
@@ -100,8 +100,8 @@ function TimechampForm() {
                   size="small"
                   className="email_login"
                   type="text"
-                  value={systemNoTwo}
-                  onChange={(event) => setSystemNoTwo(event.target.value)}
+                  value={employeeIdTwo}
+                  onChange={(event) => setEmployeeIdTwo(event.target.value)}
                   required
                 />
               </div>
@@ -119,8 +119,8 @@ function TimechampForm() {
                   size="small"
                   className="email_login"
                   type="text"
-                  value={systemNoTwo}
-                  onChange={(event) => setSystemNoTwo(event.target.value)}
+                  value={emailIdTwo}
+                  onChange={(event) => setEmailIdTwo(event.target.value)}
                   required
                 />
               </div>
@@ -139,7 +139,7 @@ function TimechampForm() {
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value="TimeChamp Login Issue">Air Conditioner</MenuItem>
+                    <MenuItem value="Air Conditioner">Air Conditioner</MenuItem>
                     <MenuItem value="Loading Issue">Drinking water</MenuItem>
                     <MenuItem value="Loading Issue">Wash Room</MenuItem>
                     <MenuItem value="TimeChamp Login Issue">Tube light</MenuItem>

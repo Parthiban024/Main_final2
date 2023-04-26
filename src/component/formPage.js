@@ -45,7 +45,7 @@ function EmployeeForm() {
       description: description
     };
 
-    axios.post('https://productionfinal.onrender.com /api/reviews', formData)
+    axios.post('https://productionfinal.onrender.com/api/reviews', formData)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     Swal.fire(

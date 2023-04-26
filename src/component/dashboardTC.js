@@ -157,7 +157,7 @@ function Table(data) {
     <div>
       <Navbar />
       <div className='sec_two d-flex justify-content-center align-items-center'>
-        <h1>Timecahmp Panel</h1>
+        <h1>Facility Panel</h1>
       </div>
       {/* <div>
         <ReactHTMLTableToExcel
