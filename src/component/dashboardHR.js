@@ -201,7 +201,7 @@ function Table(data) {
 
                         </Link>
                       </tr>
-                    ))}
+                    ))} 
                     <td>
                       <button
                         className="btn btn-danger btn-sm ms-3"
