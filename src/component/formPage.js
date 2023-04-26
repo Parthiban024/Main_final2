@@ -60,7 +60,7 @@ function EmployeeForm() {
   return (
     <div>
       <Navbar />
-      <div className='sec_two d-flex justify-content-center align-items-center color'>
+      <div className='sec_two d-flex justify-content-center align-items-center color font_header2'>
       <h3><strong>Create a IT Team Ticket</strong></h3>
       </div>
     
@@ -75,7 +75,7 @@ function EmployeeForm() {
 
               <div>
                 <TextField
-                  sx={{ width: 200 }}
+                  sx={{ width: 320 }}
                   label="Employee Name"
                   id="outlined-size-small"
                   // defaultValue="Small"
@@ -90,7 +90,7 @@ function EmployeeForm() {
               </div>
               <div>
                 <TextField
-                  sx={{ width: 200 }}
+                  sx={{ width: 320 }}
                   label="Employee ID"
                   id="outlined-size-small"
                   // defaultValue="Small"
@@ -103,9 +103,13 @@ function EmployeeForm() {
                   required
                 />
               </div>
+            </div>
+            <div className='mt-5 d-flex flex-row gap-5'>
+              {/* <TextField label="Employee Name" value={employeeName} onChange={(event) => setEmployeeName(event.target.value)} /> */}
+
               <div>
                 <TextField
-                  sx={{ width: 200 }}
+                  sx={{ width: 320 }}
                   label="Email ID"
                   id="outlined-size-small"
                   // defaultValue="Small"
@@ -117,8 +121,6 @@ function EmployeeForm() {
                   required
                 />
               </div>
-            </div>
-            <div className='d-flex flex-row gap-5 mt-5'>
               <div>
                 <TextField
                   sx={{ width: 320 }}
@@ -133,11 +135,35 @@ function EmployeeForm() {
                   required
                 />
               </div>
+            </div>
+            <div className='d-flex flex-row gap-5 mt-5'>
+            <div>
+                <FormControl sx={{ minWidth: 120 }} size="small">
+                  <InputLabel id="demo-select-small">Requirements</InputLabel>
+                  <Select
+                    sx={{ width: 320 }}
+                    labelId="demo-select-small"
+                    id="demo-select-small"
+                    value={systemType}
+                    onChange={(event) => setSystemType(event.target.value)}
+                    label="Select One"
+
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value="Software issue">Head Phone</MenuItem>
+                    <MenuItem value="Hardware issue">Mouse</MenuItem>
+                    <MenuItem value="Hardware issue">Keyboard</MenuItem>
+                    <MenuItem value="Hardware issue">Other accessories</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
               <div>
                 <FormControl sx={{ minWidth: 120 }} size="small">
-                  <InputLabel id="demo-select-small">Select Issue</InputLabel>
+                  <InputLabel id="demo-select-small">Select Category</InputLabel>
                   <Select
-                    sx={{ width: 328 }}
+                    sx={{ width: 320 }}
                     labelId="demo-select-small"
                     id="demo-select-small"
                     value={systemType}
@@ -150,6 +176,7 @@ function EmployeeForm() {
                     </MenuItem>
                     <MenuItem value="Software issue">Software issue</MenuItem>
                     <MenuItem value="Hardware issue">Hardware issue</MenuItem>
+                    <MenuItem value="Hardware issue">Network issue</MenuItem>
                     <MenuItem value="Others">Others</MenuItem>
                   </Select>
                 </FormControl>
