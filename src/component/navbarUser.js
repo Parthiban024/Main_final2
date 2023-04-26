@@ -34,7 +34,7 @@ function CollapsibleExample() {
         <Navbar.Brand href="/" >
           <div className='d-flex brand_logo'>
             <img className='Obw_logo' src={Obj_logo} alt="BigCo Inc. logo" />
-          </div>
+          </div> 
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
