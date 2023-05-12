@@ -39,13 +39,13 @@ function Table(data) {
 
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get('https://productionfinal.onrender.com/api/timechamp').then((response) => {
+    axios.get('http://localhost:8001/api/timechamp').then((response) => {
       setReviews(response.data);
     });
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`https://productionfinal.onrender.com/api/timechamp/${id}`).then(() => {
+    axios.delete(`http://localhost:8001/api/timechamp/${id}`).then(() => {
       // remove the deleted review from the local state
       const updatedReviews = review.filter((r) => r._id !== id);
       setReviews(updatedReviews);
@@ -67,14 +67,14 @@ function Table(data) {
     });
   };
   const handleAccept = (ticket) => {
-    axios.post('https://productionfinal.onrender.com/api/accepttc', ticket).then((res) => {
+    axios.post('http://localhost:8001/api/accepttc', ticket).then((res) => {
       // send email to user using nodemailer
       const emailData = {
         to: ticket.emailIdTwo,
         subject: 'Ticket Accepted',
         text: 'Your ticket has been accepted by the IT team.'
       };
-      axios.post('https://productionfinal.onrender.com/api/send-emailtc', emailData).then((res) => {
+      axios.post('http://localhost:8001/api/send-emailtc', emailData).then((res) => {
         // show success message
         Swal.fire({
           title: 'Success',
@@ -104,14 +104,14 @@ function Table(data) {
   };
 
   const handleResolve = (ticket) => {
-    axios.post('https://productionfinal.onrender.com/api/resolvetc', ticket).then((res) => {
+    axios.post('http://localhost:8001/api/resolvetc', ticket).then((res) => {
       // send email to user using nodemailer
       const emailData = {
         to: ticket.emailIdTwo,
         subject: 'Ticket Resolved',
         text: 'Your ticket has been resolved by the IT team.'
       };
-      axios.post('https://productionfinal.onrender.com/api/send-emailtc', emailData).then((res) => {
+      axios.post('http://localhost:8001/api/send-emailtc', emailData).then((res) => {
         // show success message
         Swal.fire({
           title: 'Success',

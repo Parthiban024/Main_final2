@@ -16,9 +16,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faTicketAlt } from '@fortawesome/free-solid-svg-icons';
 
-const DashboardPage = () => {
-    const navigate = useNavigate();
 
+
+const DashboardPage = () => {
+    const [message, setMessage] = useState('');
+
+    const navigate = useNavigate();
     const handleTicketButtonClick = () => {
         navigate('/form');
     };
@@ -28,9 +31,24 @@ const DashboardPage = () => {
     const handleTicketButtonClickThree = () => {
         navigate('/formHr');
     };
+// user login
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get('http://localhost:8001/api/user');
+            setMessage(response.data.message);
+          } catch (error) {
+            console.log(error);
+          }
+        };
+        fetchData();
+      }, []);
+
+
     return (
         <div className="">
             <Navbar />
+            <p>{message}</p>
             <div className="hm_sec_2 d-flex justify-content-center align-items-center animated-text flex-column">
                 <h2 className="color mt-2 font_header1"><strong>Welcome to Our Objectways Ticket Raising Website!</strong></h2>
                 <h3 className="mt-2 color1 font_header2"><strong>Hi,How can we help you?</strong></h3>
@@ -56,7 +74,7 @@ const DashboardPage = () => {
                             <Card.Body>
                                 <Card.Title className="text-center color mt-2"><strong>FACILITY TEAM</strong></Card.Title>
                                 <Card.Text className="text-center mt-3">
-                                <p className="center Card-body">Our facility team is responsible for ensuring that our facilities are clean, safe, and well-maintained. We take pride in our work and are committed to providing the highest level of service to our customers. If you have any questions or concerns, please don't hesitate to contact us.</p>   
+                                <p className="center Card-body">Our facility team is responsible for ensuring that our facilities are clean, safe, and well-maintained. We take pride in our work and are committed to providing the highest level of service to our customers. If you have any questions or concerns, please don't hesitate to contact us.</p>
                                 {/* <p className="center">If you have any questions or concerns about our facilities, please do not hesitate to contact us. We are here to provide you with the support and assistance you need to ensure that your experience with us is a positive one.</p> */}
                                 </Card.Text>
                                 <div className="d-flex justify-content-center">
@@ -79,18 +97,10 @@ const DashboardPage = () => {
                             </Card.Body>
                         </Card>
                     </CardGroup>
-               
                 </div>
-    
-               
-
             </div>
             <Footer/>
         </div>
-
-
-
     )
 }
-
 export default DashboardPage;

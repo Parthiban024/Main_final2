@@ -368,7 +368,7 @@ color: #fc6140;
 }
 .Card-body {
     font-size: 1.120rem;
-    font-family: "Poppins", "Arial Narrow", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: normal;
@@ -376,7 +376,7 @@ color: #fc6140;
 
 .home-header{
     font-size: 1.125rem;
-    font-family: "IBMPlexSans", "Arial Narrow", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 800;
     line-height: 150%;
     letter-spacing: normal;

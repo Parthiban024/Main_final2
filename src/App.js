@@ -13,28 +13,29 @@ import ReviewDetails from './component/viewPage'
 import ViewPageTwo from "./component/viewPageTC"
 import ViewPageThree from "./component/viewPageHR"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route, Switch, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
+
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/dashboard" exact element={<Dashboard />} />
-          <Route path="/form" exact element={<Form />} />
-          <Route path="/formTimechamp" exact element={<FormTwo />} />
-          <Route path="/formHr" exact element={<FormThree />} />
-          <Route path="/dashboardTC" exact element={<DashboardTC />} />
-          <Route path="/dashboardHR" exact element={<DashboardHR />} />
+          <Route path="/login" element={ <LoginPage />} />
+          <Route path="/" element={ <Home/>} />
+          <Route path="/admin" element={ <Dashboard />} />
+          <Route path="/form" element={ <Form/>} />
+          <Route path="/formTimechamp" element={<FormTwo/>} />
+          <Route path="/formHr" element={<FormThree />} />
+          <Route path="/dashboardTC" element={ <DashboardTC />} />
+          <Route path="/dashboardHR" element={ <DashboardHR />} />
           <Route path="/review/:id" element={<ReviewDetails />} />
           <Route path="/reviewtwo/:id" element={<ViewPageTwo />} />
           <Route path="/reviewthree/:id" element={<ViewPageThree />} />
-          <Route path="/login" exact element={<LoginPage />} />
-          <Route path="/loginTC" exact element={<LoginPageTwo />} />
-          <Route path="/loginHR" exact element={<LoginPageThree />} />
+          <Route path="/loginTC" element={<LoginPageTwo />} />
+          <Route path="/loginHR" element={<LoginPageThree />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
