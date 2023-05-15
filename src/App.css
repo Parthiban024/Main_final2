@@ -19,7 +19,11 @@
 .nav_font {
     color: black !important;
 }
-
+.homeMain{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
 .nav_font:hover {
     color: #fc6140 !important;
     transition: 0.5s;
@@ -38,7 +42,9 @@
     background-color: grey !important;
 
 }
-
+.sidenav{
+    margin-top: 200px;
+}
 .navbar-dark {
 
     --bs-navbar-active-color: #fc6140 !important;

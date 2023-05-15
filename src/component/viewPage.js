@@ -10,7 +10,7 @@ function ReviewDetails() {
 
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className='viewTable'>
   <table>
     <tbody>

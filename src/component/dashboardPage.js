@@ -192,7 +192,7 @@ useEffect(() => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <p>{message}</p>
       <div className='sec_two d-flex justify-content-center align-items-center'>
         <h1>ADMIN PANEL</h1>

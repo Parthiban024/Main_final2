@@ -155,7 +155,7 @@ function Table(data) {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='sec_two d-flex justify-content-center align-items-center'>
         <h1>Facility Panel</h1>
       </div>

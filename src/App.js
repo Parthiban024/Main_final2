@@ -12,14 +12,17 @@ import LoginPageThree from "./component/loginHR"
 import ReviewDetails from './component/viewPage'
 import ViewPageTwo from "./component/viewPageTC"
 import ViewPageThree from "./component/viewPageHR"
+import MainPage from "./component/Slidebar"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
 
   return (
     <div className="App">
       <Router>
+        <MainPage />
+
         <Routes>
           <Route path="/login" element={ <LoginPage />} />
           <Route path="/" element={ <Home/>} />

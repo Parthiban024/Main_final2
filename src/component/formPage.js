@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import {  Select, MenuItem, InputLabel, FormControl } from '@material-ui/core';
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
@@ -12,6 +12,8 @@ import Navbar from "./navbarUser"
 import Footer from "./footer"
 import Swal from "sweetalert2";
 function EmployeeForm() {
+
+
   const [id, idchange] = useState("");
   const [employeeName, setEmployeeName] = useState('');
   const [employeeId, setEmployeeId] = useState('');
@@ -28,7 +30,6 @@ function EmployeeForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const formData = {
 
       employeeName: employeeName,
@@ -57,9 +58,36 @@ function EmployeeForm() {
 
   };
 
+
+// loading screen
+
+const [isLoading, setIsLoading] = useState(true);
+
+useEffect(() => {
+  // Simulate loading delay for 2 seconds
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
+}, []);
+
+
+if (isLoading) {
+  return (
+    <div className="loading-screen">
+      <div className="loading-dots">
+        <div className="loading-dot"></div>
+        <div className="loading-dot"></div>
+        <div className="loading-dot"></div>
+      </div>
+    </div>
+    // </div>
+
+  );
+}
+
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='sec_two d-flex justify-content-center align-items-center color font_header2'>
       <h3><strong>Create a IT Team Ticket</strong></h3>
       </div>

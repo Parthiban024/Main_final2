@@ -31,7 +31,15 @@ const DashboardPage = () => {
     const handleTicketButtonClickThree = () => {
         navigate('/formHr');
     };
-// user login
+
+const [isLoading, setIsLoading] = useState(true);
+
+useEffect(() => {
+  // Simulate loading delay for 2 seconds
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
+}, []);
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -44,11 +52,22 @@ const DashboardPage = () => {
         fetchData();
       }, []);
 
-
+      if (isLoading) {
+        return (
+          <div className="loading-screen">
+            <div className="loading-dots">
+              <div className="loading-dot"></div>
+              <div className="loading-dot"></div>
+              <div className="loading-dot"></div>
+            </div>
+          </div>
+          // </div>
+    
+        );
+      }
     return (
-        <div className="">
-            <Navbar />
-            <p>{message}</p>
+<div className="homeMain">
+            {/* <Navbar /> */}
             <div className="hm_sec_2 d-flex justify-content-center align-items-center animated-text flex-column">
                 <h2 className="color mt-2 font_header1"><strong>Welcome to Our Objectways Ticket Raising Website!</strong></h2>
                 <h3 className="mt-2 color1 font_header2"><strong>Hi,How can we help you?</strong></h3>

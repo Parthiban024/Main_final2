@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 // import {  Select, MenuItem, InputLabel, FormControl } from '@material-ui/core';
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
@@ -61,9 +61,37 @@ function TimechampForm() {
     window.location = "/"
   };
 
+
+
+  // loading screen
+
+const [isLoading, setIsLoading] = useState(true);
+
+useEffect(() => {
+  // Simulate loading delay for 2 seconds
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
+}, []);
+
+
+if (isLoading) {
+  return (
+    <div className="loading-screen">
+      <div className="loading-dots">
+        <div className="loading-dot"></div>
+        <div className="loading-dot"></div>
+        <div className="loading-dot"></div>
+      </div>
+    </div>
+    // </div>
+
+  );
+}
+
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='sec_two d-flex justify-content-center align-items-center color font_header2'>
         <h2><strong>Create a Facility Team Ticket</strong></h2>
       </div>
