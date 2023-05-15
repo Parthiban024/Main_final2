@@ -41,7 +41,7 @@ const LoginPage = ({ handleLogin }) => {
       });
     }
   };
-
+    
   return (
     <div>
       {/* <Navbar /> */}
