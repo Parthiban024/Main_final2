@@ -54,7 +54,7 @@ useEffect(() => {
 
       if (isLoading) {
         return (
-          <div className="loading-screen">
+      <div className="loading-screen">
             <div className="loading-dots">
               <div className="loading-dot"></div>
               <div className="loading-dot"></div>

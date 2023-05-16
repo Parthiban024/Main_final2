@@ -8,8 +8,10 @@
     display: flex;
     align-items: center;
     color: #fff;
-  }
-  .nav-menu {
+    position: fixed;
+    width: 100%;
+}
+ .nav-menu {
     background-color: var(--navBg);
     width: 200px;
     height: 100vh;

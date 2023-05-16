@@ -9,36 +9,24 @@ export const SidebarData = [
     title: "Home",
     path: "/",
     icon: <AiIcons.AiFillHome />,
-    cName: "nav-text"
+cName: "nav-text ms-4"
   },
   {
 title: "Tickets",
-path: "/form",
+ path: "/form",
     icon: <IoIcons.IoIosPaper />,
-    cName: "nav-text"
+cName: "nav-text ms-4"
   },
   {
-    title: "Products",
-    path: "/s",
-    icon: <FaIcons.FaCartPlus />,
-    cName: "nav-text"
-  },
-  {
-    title: "Team",
-    path: "/",
-    icon: <IoIcons.IoMdPeople />,
-    cName: "nav-text"
-  },
-  {
-    title: "Messages",
+title: "Status",
     path: "/",
     icon: <FaIcons.FaEnvelopeOpenText />,
-    cName: "nav-text"
+cName: "nav-text ms-4"
   },
   {
     title: "Support",
     path: "/",
     icon: <IoIcons.IoMdHelpCircle />,
-    cName: "nav-text"
+cName: "nav-text ms-4"
   }
 ];

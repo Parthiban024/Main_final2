@@ -14,7 +14,8 @@ import ViewPageTwo from "./component/viewPageTC"
 import ViewPageThree from "./component/viewPageHR"
 import MainPage from "./component/Slidebar"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Routes, Route, Navigate  } from "react-router-dom";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <MainPage />
 
         <Routes>
+  
           <Route path="/login" element={ <LoginPage />} />
           <Route path="/" element={ <Home/>} />
           <Route path="/admin" element={ <Dashboard />} />
@@ -37,6 +39,7 @@ function App() {
           <Route path="/reviewthree/:id" element={<ViewPageThree />} />
           <Route path="/loginTC" element={<LoginPageTwo />} />
           <Route path="/loginHR" element={<LoginPageThree />} />
+
         </Routes>
       </Router>
     </div>

@@ -22,8 +22,6 @@ export default function Navbar() {
 
   return (
     <>
-      <IconContext.Provider value={{ color: "#FFF" }}>
-        {/* All the icons now are white */}
         <div className="navbar">
         <div className='d-flex brand_logo'>
             <img className='Obw_logo' src={Obj_logo} alt="BigCo Inc. logo" />
@@ -34,9 +32,11 @@ export default function Navbar() {
               <AiIcons.AiOutlineLogout />
             </Link>
           </div>
-        </div>
+       
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-          <ul className="nav-menu-items">
+  
+  <ul className="nav-menu-items mt-5">
+  <h2 className="d-flex justify-content-center">Dashbboard</h2>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
@@ -49,7 +49,7 @@ export default function Navbar() {
             })}
           </ul>
         </nav>
-      </IconContext.Provider>
-    </>
+        </div>
+</>
   );
 }

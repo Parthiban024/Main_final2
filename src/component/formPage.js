@@ -86,9 +86,9 @@ if (isLoading) {
 }
 
   return (
-    <div>
+<div className='homeMain'>
       {/* <Navbar /> */}
-      <div className='sec_two d-flex justify-content-center align-items-center color font_header2'>
+      <div className='sec_two  d-flex justify-content-center align-items-center color font_header2'>
       <h3><strong>Create a IT Team Ticket</strong></h3>
       </div>
     
