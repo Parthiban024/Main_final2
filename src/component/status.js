@@ -22,7 +22,7 @@ function TicketStatus({ match }) {
 
   return (
     <div className='homemain'>
-      <h1>Ticket Status</h1>
+      <h1>Ticket Status</h1>   
       <p>Accepted: {ticket.accepted ? 'Yes' : 'No'}</p>
       <p>Resolved: {ticket.resolved ? 'Yes' : 'No'}</p>
     </div>
