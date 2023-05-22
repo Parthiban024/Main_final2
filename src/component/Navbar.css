@@ -1,15 +1,19 @@
 :root {
-    --navBg: #242634;
+    --navBg: #242634 !important;
   }
   
   .navbar {
     background-color: var(--navBg) !important;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    position: fixed;
-    width: 100%;
+    height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    color: #fff !important;
+    position: fixed !important;
+    width: 100% !important; 
+}
+.dropdown{
+  margin-left: 62px;
+  cursor: pointer;
 }
  .nav-menu {
     background-color: var(--navBg);

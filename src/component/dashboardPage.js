@@ -45,6 +45,8 @@ useEffect(() => {
     { label: 'Date', key: 'issueDate' },
     { label: 'Accepted', key: 'accepted' },
     { label: 'Resolved', key: 'resolved' },
+    { label: 'updatedAccepted', key: 'accepted' },
+    { label: 'updatedResolved', key: 'resolved' },
 
   ];
   const csvData = review.map(r => ({
@@ -60,6 +62,9 @@ useEffect(() => {
     issueDate: r.issueDate,
     accepted: acceptedTickets.includes(r._id) ? 'Yes' : 'No',
     resolved: resolvedTickets.includes(r._id) ? 'Yes' : 'No',
+      // add the updated accepted and resolved status
+  updatedAccepted: r.accepted ? 'Yes' : 'No',
+  updatedResolved: r.resolved ? 'Yes' : 'No',
   }));
 
   const navigate = useNavigate();
@@ -121,6 +126,12 @@ useEffect(() => {
         setResolvedTickets((prevState) => [...prevState, ticket._id]);
         // store the state of the resolved property in local storage
         localStorage.setItem(`ticket-${ticket._id}-resolved`, true);
+              // send the updated ticket data to the backend API
+      axios.post(`http://localhost:8001/api/reviews/${ticket._id}`, updatedTicket).then((res) => {
+        console.log(res.data);
+      }).catch((error) => {
+        console.log(error);
+      });
       }).catch(() => {
         // show error message
         Swal.fire({
@@ -165,6 +176,12 @@ useEffect(() => {
         setResolvedTickets((prevState) => [...prevState, ticket._id]);
         // store the state of the resolved property in local storage
         localStorage.setItem(`ticket-${ticket._id}-resolved`, true);
+              // send the updated ticket data to the backend API
+      axios.post(`http://localhost:8001/api/reviews/${ticket._id}`, updatedTicket).then((res) => {
+        console.log(res.data);
+      }).catch((error) => {
+        console.log(error);
+      });
       }).catch(() => {
         // show error message
         Swal.fire({
@@ -191,7 +208,7 @@ useEffect(() => {
 
 
   return (
-    <div>
+    <div className='homeMain'>
       {/* <Navbar /> */}
       <p>{message}</p>
       <div className='sec_two d-flex justify-content-center align-items-center'>

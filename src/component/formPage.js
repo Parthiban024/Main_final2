@@ -20,6 +20,7 @@ function EmployeeForm() {
   const [emailId, setEmailId] = useState('');
   const [systemNo, setSystemNo] = useState('');
   const [systemType, setSystemType] = useState('');
+  const [systemTypetwo, setSystemTypetwo] = useState('');
   const [unitNo, setUnitNo] = useState('');
   const [floorNo, setFloorNo] = useState('');
   const [teamName, setTeamName] = useState('');
@@ -37,6 +38,7 @@ function EmployeeForm() {
       emailId: emailId,
       systemNo: systemNo,
       systemType: systemType,
+      systemTypetwo: systemTypetwo,
       unitNo: unitNo,
       floorNo: floorNo,
       teamName: teamName,
@@ -46,7 +48,7 @@ function EmployeeForm() {
       description: description
     };
 
-    axios.post('https://productionfinal.onrender.com/api/reviews', formData)
+axios.post('http://localhost:8001/api/reviews', formData)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     Swal.fire(
@@ -179,10 +181,10 @@ if (isLoading) {
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value="Software issue">Head Phone</MenuItem>
-                    <MenuItem value="Hardware issue">Mouse</MenuItem>
-                    <MenuItem value="Hardware issue">Keyboard</MenuItem>
-                    <MenuItem value="Hardware issue">Other accessories</MenuItem>
+                    <MenuItem value="Head Phone">Head Phone</MenuItem>
+                    <MenuItem value="Mouse">Mouse</MenuItem>
+                <MenuItem value="Keyboard">Keyboard</MenuItem>
+                <MenuItem value=">Other accessories">Other accessories</MenuItem>
                   </Select>
                 </FormControl>
               </div>
@@ -193,8 +195,8 @@ if (isLoading) {
                     sx={{ width: 328 }}
                     labelId="demo-select-small"
                     id="demo-select-small"
-                    value={systemType}
-                    onChange={(event) => setSystemType(event.target.value)}
+                value={systemTypetwo}
+                onChange={(event) => setSystemTypetwo(event.target.value)}
                     label="Select Category *"
 
                   >
@@ -247,8 +249,8 @@ if (isLoading) {
                     sx={{ width: 328 }}
                     labelId="demo-select-small"
                     id="demo-select-small"
-                    value={priority}
-                    onChange={(event) => setPriority(event.target.value)}
+                value={teamName}
+                    onChange={(event) =>  setTeamName(event.target.value)}
                     label="Team Name"
                   >
                     <MenuItem value="">
@@ -268,8 +270,8 @@ if (isLoading) {
                     sx={{ width: 328 }}
                     labelId="demo-select-small"
                     id="demo-select-small"
-                    value={priority}
-                    onChange={(event) => setPriority(event.target.value)}
+                    value={teamManager}
+                    onChange={(event) => setTeamManager(event.target.value)}
                     label="Team Manager"
                   >
                     <MenuItem value="">

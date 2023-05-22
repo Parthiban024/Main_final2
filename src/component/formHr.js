@@ -11,14 +11,13 @@ import axios from 'axios';
 import Navbar from "./navbarUser"
 import Footer from "./footer"
 import Swal from "sweetalert2";
+
+
 function HrForm() {
   const [id, idchange] = useState("");
   const [employeeNameThree, setEmployeeNameThree] = useState('');
   const [employeeIdThree, setEmployeeIdThree] = useState('');
-  const [emailIdThree, setEmailIdThre] = useState('');
   const [systemNoThree, setSystemNoThree] = useState('');
-  const [systemTypeThree, setSystemTypeThree] = useState('');
-  const [unitNoThree, setUnitNoThree] = useState('');
   const [floorNoThree, setFloorNoThree] = useState('');
   const [teamNameThree, setTeamNameThree] = useState('');
   const [teamManagerThree, setTeamManagerThree] = useState('');
@@ -33,10 +32,7 @@ function HrForm() {
 
       employeeNameThree: employeeNameThree,
       employeeIdThree: employeeIdThree,
-      emailIdThree: emailIdThree,
       systemNoThree: systemNoThree,
-      systemTypeThree: systemTypeThree,
-      unitNoThree: unitNoThree,
       floorNoThree: floorNoThree,
       teamNameThree: teamNameThree,
       teamManagerThree: teamManagerThree,
@@ -45,7 +41,7 @@ function HrForm() {
       descriptionThree: descriptionThree
     };
 
-    axios.post('https://productionfinal.onrender.com/api/hrreview', formDataThree)
+axios.post('http://localhost:8001/api/hrreview', formDataThree)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     Swal.fire(
@@ -87,7 +83,7 @@ if (isLoading) {
 }
 
   return (
-    <div>
+    <div className='homeMain'>
       {/* <Navbar /> */}
       <div className='sec_two d-flex justify-content-center align-items-center color font_header2'>
       <h2><strong>Create a HR Team Ticket</strong></h2>
@@ -125,8 +121,8 @@ if (isLoading) {
                   size="small"
                   className="email_login"
                   type="text"
-                  value={systemNoThree}
-                  onChange={(event) => setSystemNoThree(event.target.value)}
+                  value={employeeNameThree}
+                  onChange={(event) => setEmployeeNameThree(event.target.value)}
                   required
                 />
               </div>
@@ -140,9 +136,9 @@ if (isLoading) {
                   // defaultValue="Small"
                   size="small"
                   className="email_login"
-                  type="text"
-                  value={systemNoThree}
-                  onChange={(event) => setSystemNoThree(event.target.value)}
+                  type="email"
+                  value={employeeIdThree}
+                  onChange={(event) => setEmployeeIdThree(event.target.value)}
                   required
                 />
               </div>
@@ -153,8 +149,8 @@ if (isLoading) {
                     sx={{ width: 328 }}
                     labelId="demo-select-small"
                     id="demo-select-small"
-                    value={systemTypeThree}
-                    onChange={(event) => setSystemTypeThree(event.target.value)}
+                    value={priorityThree}
+                    onChange={(event) => setPriorityThree(event.target.value)}
                     label="Select Role"
 
                   >
@@ -183,8 +179,8 @@ if (isLoading) {
                     sx={{ width: 328 }}
                     labelId="demo-select-small"
                     id="demo-select-small"
-                    value={systemTypeThree}
-                    onChange={(event) => setSystemTypeThree(event.target.value)}
+                    value={teamNameThree}
+                    onChange={(event) => setTeamNameThree(event.target.value)}
                     label="Select Category"
 
                   >
@@ -205,8 +201,8 @@ if (isLoading) {
                     sx={{ width: 328 }}
                     labelId="demo-select-small"
                     id="demo-select-small"
-                    value={systemTypeThree}
-                    onChange={(event) => setSystemTypeThree(event.target.value)}
+                    value={teamManagerThree}
+                    onChange={(event) => setTeamManagerThree(event.target.value)}
                     label="Team Manager"
 
                   >
@@ -239,8 +235,8 @@ if (isLoading) {
                     sx={{ width: 328 }}
                     labelId="demo-select-small"
                     id="demo-select-small"
-                    value={systemTypeThree}
-                    onChange={(event) => setSystemTypeThree(event.target.value)}
+                    value={floorNoThree}
+            onChange={(event) => setFloorNoThree(event.target.value)}
                     label="Select Category"
 
                   >

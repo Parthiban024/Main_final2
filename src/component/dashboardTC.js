@@ -13,11 +13,11 @@ function Table(data) {
   const filteredData = selectedMonth ? data.filter(item => item.month === selectedMonth) : data;
 
   const headers = [
-    { label: 'Employee Namw', key: 'employeeNameTwo' },
     { label: 'Employee ID', key: 'employeeIdTwo' },
-    { label: 'Email', key: 'emailIdTwo' },
+    { label: 'Email ID', key: 'emailID' },
     { label: 'Priority', key: 'priorityTwo' },
     { label: 'Unit No', key: 'unitNoTwo' },
+    { label: 'Team Name', key: 'teamNameTwo' },
     { label: 'Floor No', key: 'floorNoTwo' },
     { label: 'System No', key: 'systemNoTwo' },
     { label: 'Issue', key: 'systemTypeTwo' },
@@ -26,11 +26,11 @@ function Table(data) {
   ];
 
   const csvData = review.map(r => ({
-    employeeNameTwo: r.employeeNameTwo,
     employeeIdTwo: r.employeeIdTwo,
-    emailIdTwo: r.emailIdTwo,
     priorityTwo: r.priorityTwo,
+    emailID: r.emailID,
     unitNoTwo: r.unitNotwo,
+    teamNameTwo: r.teamNameTwo,
     floorNoTwo: r.floorNoTwo,
     systemNoTwo: r.systemNoTwo,
     systemTypeTwo: r.systemTypeTwo,
@@ -70,7 +70,7 @@ function Table(data) {
     axios.post('http://localhost:8001/api/accepttc', ticket).then((res) => {
       // send email to user using nodemailer
       const emailData = {
-        to: ticket.emailIdTwo,
+        to: ticket.emailID,
         subject: 'Ticket Accepted',
         text: 'Your ticket has been accepted by the IT team.'
       };
@@ -107,7 +107,7 @@ function Table(data) {
     axios.post('http://localhost:8001/api/resolvetc', ticket).then((res) => {
       // send email to user using nodemailer
       const emailData = {
-        to: ticket.emailIdTwo,
+        to: ticket.emailID,
         subject: 'Ticket Resolved',
         text: 'Your ticket has been resolved by the IT team.'
       };
@@ -154,7 +154,7 @@ function Table(data) {
   };
 
   return (
-    <div>
+    <div className='homeMain'>
       {/* <Navbar /> */}
       <div className='sec_two d-flex justify-content-center align-items-center'>
         <h1>Facility Panel</h1>
@@ -178,14 +178,15 @@ function Table(data) {
           <table id="table-to-xls" className="table table-hover tablePage">
             <thead className="thead_bg">
               <tr>
-              <th>Employee Name</th>
-                <th>Employee ID</th>
-                <th>Email</th>
-                <th>Priority</th>
+              <th>Team Name</th>
+            <th>Team Manager</th>
+            <th>Email ID</th>
+            <th>Issue</th>
+<th>New Requirements</th>
                 <th>Unit No</th>
                 <th>Floor No</th>
-                <th>System No</th>
-                <th>Issue</th>
+
+        <th>Priority</th>
                 <th>Description</th>
                 <th>Date</th>
                 <th>View</th>
@@ -197,14 +198,14 @@ function Table(data) {
             <tbody>
               {review.map((r) => (
                 <tr key={r._id}>
-                  <td>{r.employeeNameTwo}</td>
-                  <td>{r.employeeIdTwo}</td>
-                  <td>{r.emailIdTwo}</td>
-                  <td>{r.priorityTwo}</td>
+                  <td>{r.systemTypeTwo}</td>
+                  <td>{r.systemNoTwo}</td>
+                  <td>{r.emailID}</td>
+              <td>{r.employeeIdTwo}</td>
+                  <td>{r.teamNameTwo}</td>
                   <td>{r.unitNoTwo}</td>
                   <td>{r.floorNoTwo}</td>
-                  <td>{r.systemNoTwo}</td>
-                  <td>{r.systemTypeTwo}</td>
+                  <td>{r.priorityTwo}</td>
                   <td>{r.descriptionTwo}</td>
                   <td>{r.issueDateTwo}</td>
                   <td>

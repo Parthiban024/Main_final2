@@ -12,27 +12,25 @@ function Table(data) {
   const filteredData = selectedMonth ? data.filter(item => item.month === selectedMonth) : data;
 
   const headers = [
-    { label: 'Employee Namw', key: 'employeeNameThree' },
-    { label: 'Employee ID', key: 'employeeIdThree' },
-    { label: 'Email', key: 'emailIdThree' },
-    { label: 'Priority', key: 'priorityThree' },
-    { label: 'Unit No', key: 'unitNoThree' },
-    { label: 'Floor No', key: 'floorNoThree' },
-    { label: 'System No', key: 'systemNoThree' },
-    { label: 'Issue', key: 'systemTypeThree' },
+    { label: 'Employee Namw', key: 'systemNoThree' },
+    { label: 'Employee ID', key: 'employeeNameThree' },
+    { label: 'Role', key: 'priorityThree' },
+    { label: 'Team Name', key: 'teamNameThree' },
+    { label: 'Team Manager', key: 'teamManagerThree' },
+    { label: 'Issue', key: 'floorNoThree' },
+    { label: 'Issue Date', key: 'issueDateThree' },
     { label: 'Description', key: 'descriptionThree' },
 
   ];
 
   const csvData = review.map(r => ({
-    employeeNameThree: r.employeeNameThree,
-    employeeIdThree: r.employeeIdThree,
-    emailIdThree: r.emailIdThree,
-    priorityThree: r.priorityThree,
-    unitNoThree: r.unitNoThree,
-     floorNoThree: r.floorNoThree,
     systemNoThree: r.systemNoThree,
-    systemTypeThree: r.systemTypeThree,
+    employeeIdThree: r.employeeNameThree,
+    priorityThree: r.priorityThree,
+    teamNameThree: r.teamNameThree,
+    teamManagerThree: r.teamManagerThree,
+    floorNoThree: r.floorNoThree,
+    issueDateThree: r.issueDateThree,
     descriptionThree: r.descriptionThree,
   }));
 
@@ -70,7 +68,7 @@ function Table(data) {
     axios.post('http://localhost:8001/api/accepthr', ticket).then((res) => {
       // send email to user using nodemailer
       const emailData = {
-        to: ticket.emailIdThree,
+        to: ticket.employeeIdThree,
         subject: 'Ticket Accepted',
         text: 'Your ticket has been accepted by the IT team.'
       };
@@ -107,7 +105,7 @@ function Table(data) {
     axios.post('http://localhost:8001/api/resolvehr', ticket).then((res) => {
       // send email to user using nodemailer
       const emailData = {
-        to: ticket.emailIdThree,
+        to: ticket.employeeIdThree,
         subject: 'Ticket Resolved',
         text: 'Your ticket has been resolved by the IT team.'
       };
@@ -144,7 +142,7 @@ function Table(data) {
     navigate(`/reviewthree/${id}`, { state: { review: selectedReview } });
   };
   return (
-    <div>
+    <div className='homeMain'>
       {/* <Navbar /> */}
       <div className='sec_two d-flex justify-content-center align-items-center'>
         <h1>HR Panel</h1>
@@ -158,15 +156,14 @@ function Table(data) {
             <thead className="thead_bg">
               <tr>
               <th >Employee Name</th>
-                <th >Employee ID</th>
+                <th>Employee ID</th>
                 <th>Email</th>
-                <th>Priority</th>
-                <th>Unit No</th>
-                <th>Floor No</th>
-                <th>System No</th>
+                <th>Role</th>
+                <th>Team Name</th>
+                <th>Team Manager</th>
                 <th>Issue</th>
+                <th>Issue Date</th>
                 <th>Description</th>
-                <th>Date</th>
                 <th>View</th>
                 <th>Remove</th>
                 <th>Accept</th>
@@ -176,16 +173,15 @@ function Table(data) {
             <tbody>
               {review.map((r) => (
                 <tr key={r._id}>
+                  <td>{r.systemNoThree}</td>
                   <td>{r.employeeNameThree}</td>
                   <td>{r.employeeIdThree}</td>
-                  <td>{r.emailIdThree}</td>
                   <td>{r.priorityThree}</td>
-                  <td>{r.unitNoThree}</td>
+                  <td>{r.teamNameThree}</td>
+                  <td>{r.teamManagerThree}</td>
                   <td>{r.floorNoThree}</td>
-                  <td>{r.systemNoThree}</td>
-                  <td>{r.systemTypeThree}</td>
-                  <td>{r.descriptionThree}</td>
                   <td>{r.issueDateThree}</td>
+                  <td>{r.descriptionThree}</td>
                   <td>
                     <button
                       className="btn btn-info btn-sm ms-1"

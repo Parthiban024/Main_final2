@@ -13,6 +13,7 @@ import ReviewDetails from './component/viewPage'
 import ViewPageTwo from "./component/viewPageTC"
 import ViewPageThree from "./component/viewPageHR"
 import MainPage from "./component/Slidebar"
+import Status from "./component/status"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route, Navigate  } from "react-router-dom";
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={ <LoginPage />} />
           <Route path="/" element={ <Home/>} />
           <Route path="/admin" element={ <Dashboard />} />
+          <Route path="/status" element={ <Status />} />
           <Route path="/form" element={ <Form/>} />
           <Route path="/formTimechamp" element={<FormTwo/>} />
           <Route path="/formHr" element={<FormThree />} />

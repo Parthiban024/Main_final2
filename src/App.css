@@ -39,7 +39,9 @@
 .nav_collapse {
     color: black !important;
 }
-
+.homemain{
+    margin-left: 1000px !important;
+}
 .navbar-toggler {
 
     background-color: grey !important;
