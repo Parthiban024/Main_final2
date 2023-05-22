@@ -10,7 +10,7 @@ import { CSVLink } from 'react-csv';
 function Table(data) {
 
 // admin page
-useEffect(() => {
+useEffect(() => {   
   const fetchData = async () => {
     try {
       const response = await axios.get('http://localhost:8001/api/admin');
