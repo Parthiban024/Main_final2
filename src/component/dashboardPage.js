@@ -5,6 +5,7 @@ import { CSVLink } from 'react-csv';
 import { Route, Routes, Navigate, Link, useNavigate } from "react-router-dom";
 
 
+
 function Table({ onReviewStatusChange }) {
   const [reviews, setReviews] = useState([]);
   const [review, setReview] = useState([]);
@@ -62,6 +63,17 @@ function Table({ onReviewStatusChange }) {
   const formatTime = (time) => {
     const date = new Date(time);
     return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+
+// admin page
+useEffect(() => {   
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:8001/api/admin');
+      setMessage(response.data.message);
+    } catch (error) {
+      console.log(error);
+    }
+
   };
 
   const headers = [
