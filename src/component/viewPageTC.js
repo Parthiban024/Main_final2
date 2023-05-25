@@ -9,7 +9,7 @@ function ReviewDetails() {
   const { review } = location.state;
 
   return (
-    <div>
+    <div className='homeMain'>
       {/* <Navbar/> */}
       <div className='viewTable'>
   <table>

@@ -147,9 +147,11 @@ function Table(data) {
       <div className='sec_two d-flex justify-content-center align-items-center'>
         <h1>HR Panel</h1>
       </div>
+      <div>
       <CSVLink className='exportbtn btn btn-success btn-sm  table_main' data={csvData} headers={headers} filename={`data_${selectedMonth || 'all_months'}.csv`}>
         Export to CSV
       </CSVLink>
+      </div>
       <div className='hm_sec_3'>
         <div className='container  d-flex justify-content-center '>
           <table id="table-to-xls" className="table table-hover tablePage">

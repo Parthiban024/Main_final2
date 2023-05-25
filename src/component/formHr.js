@@ -38,7 +38,7 @@ function HrForm() {
       teamManagerThree: teamManagerThree,
       priorityThree: priorityThree,
       issueDateThree: issueDateThree,
-      descriptionThree: descriptionThree
+      descriptionThree: descriptionThree,
     };
 
 axios.post('http://localhost:8001/api/hrreview', formDataThree)

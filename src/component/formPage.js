@@ -45,10 +45,17 @@ function EmployeeForm() {
       teamManager: teamManager,
       priority: priority,
       issueDate: issueDate,
-      description: description
+      description: description,
     };
 
-axios.post('http://localhost:8001/api/reviews', formData)
+  // Generate a unique ticket ID
+  const ticketId = Math.floor(Math.random() * 1000000);
+
+    // Add the ticket ID to the form data
+    formData.ticketId = ticketId;
+
+    
+    axios.post('http://localhost:8001/api/reviews', formData)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     Swal.fire(
@@ -56,8 +63,8 @@ axios.post('http://localhost:8001/api/reviews', formData)
       'You clicked the button!',
       'success'
     )
-    window.location = "/"
 
+    window.location = "/"
   };
 
 

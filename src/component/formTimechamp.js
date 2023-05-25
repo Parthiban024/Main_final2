@@ -42,7 +42,7 @@ function TimechampForm() {
       teamNameTwo: teamNameTwo,
       priorityTwo: priorityTwo,
       issueDateTwo: issueDateTwo,
-      descriptionTwo: descriptionTwo
+      descriptionTwo: descriptionTwo,
     };
 
 
